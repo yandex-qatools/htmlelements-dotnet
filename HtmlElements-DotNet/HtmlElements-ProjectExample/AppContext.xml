@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<objects xmlns="http://www.springframework.net"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.net http://www.springframework.net/xsd/1.1.0/spring-objects.xsd"
+  default-lazy-init="true">
+
+  <object id="propertyConfigurer" type="Spring.Objects.Factory.Config.PropertyPlaceholderConfigurer, Spring.Core">
+    <property name="Location">
+      <value>~/environment.config</value>
+    </property>
+    <property name="ConfigSections" value="app-properties"/>
+    <property name="IgnoreUnresolvablePlaceholders" value="false" />
+  </object>
+  
+  <object id="browserFactory" type="HtmlElements.Test.Browsers.BrowserFactory">
+    <constructor-arg type="HtmlElements.Test.Browsers.BrowserType" value="${google.service.browser.type}" />
+    <property name="LoadTimeout" value="${browser.loadTimeout}" />
+    <property name="PollingInterval" value="${browser.pollingInterval}" />
+    <property name="ProfilePath" value="${google.service.browser.profile.path}" />
+  </object>
+
+  <object id="browser" type="HtmlElements.Test.Browsers.Browser" factory-object="browserFactory" factory-method="GetBrowser" singleton="false" />
+
+  <object id="googleService" type="HtmlElements.Test.Services.GoogleGuiService" singleton="false">
+    <constructor-arg ref="browser" />
+    <property name="BaseUrl" value="${google.service.baseurl}"/>
+  </object>
+
+</objects>

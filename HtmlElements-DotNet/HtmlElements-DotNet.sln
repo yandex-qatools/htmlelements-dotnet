@@ -10,6 +10,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{67FC74
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HtmlElements-DotNet", "HtmlElements-DotNet\HtmlElements-DotNet.csproj", "{F8E33C17-149B-488C-8156-CC19AC715B82}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HtmlElements-ProjectExample", "HtmlElements-ProjectExample\HtmlElements-ProjectExample.csproj", "{21B6BF17-92E5-4844-B63C-B3A6183047A6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -20,6 +22,10 @@ Global
 		{F8E33C17-149B-488C-8156-CC19AC715B82}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F8E33C17-149B-488C-8156-CC19AC715B82}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F8E33C17-149B-488C-8156-CC19AC715B82}.Release|Any CPU.Build.0 = Release|Any CPU
+		{21B6BF17-92E5-4844-B63C-B3A6183047A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21B6BF17-92E5-4844-B63C-B3A6183047A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21B6BF17-92E5-4844-B63C-B3A6183047A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21B6BF17-92E5-4844-B63C-B3A6183047A6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

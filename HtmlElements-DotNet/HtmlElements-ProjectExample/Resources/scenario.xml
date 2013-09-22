@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<suite name="Test Suite" xmlns="http://hardnorth.net/nunit-runner/XMLSchema.xsd"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://hardnorth.net/nunit-runner/XMLSchema.xsd ./nunit-runner.xsd">
+  
+  <!-- <test name="Test1" class="Selenium.Test.Tests.SampleTest" /> -->
+  <!-- <test name="Test1" class="Selenium.Test.Tests.TestingTest" /> -->
+  <test name="Test1" class="HtmlElements.Test.Tests.SampleTest" />
+</suite>

@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="XMLSchema1"
+    targetNamespace="http://hardnorth.net/nunit-runner/XMLSchema.xsd"
+    xmlns:nr="http://hardnorth.net/nunit-runner/XMLSchema.xsd"
+    elementFormDefault="qualified"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+>
+  
+  <xs:complexType name="suiteType">
+    <xs:choice maxOccurs="unbounded">
+      <xs:element ref="nr:test" />
+      <xs:element ref="nr:listener" />
+    </xs:choice>
+    <xs:attribute name="name" type="xs:string" />
+  </xs:complexType>
+  <xs:element name="suite" type="nr:suiteType" />
+  
+  <xs:complexType name="testType">
+    <xs:attribute name="name" type="xs:string" />
+    <xs:attribute name="class" type="xs:string" />
+  </xs:complexType>
+  <xs:element name="test" type="nr:testType" />
+
+  <!-- Isn't used for now -->
+  <xs:complexType name="listenerType">
+    <xs:attribute name="class" type="xs:string" />
+  </xs:complexType>
+  <xs:element name="listener" type="nr:listenerType"/>
+  
+</xs:schema>
