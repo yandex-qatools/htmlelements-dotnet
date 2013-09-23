@@ -1,6 +1,4 @@
-﻿using Yandex.HtmlElements.Factories;
-using OpenQA.Selenium;
-using OpenQA.Selenium.Support.PageObjects;
+﻿using OpenQA.Selenium.Support.PageObjects;
 using System;
 using System.ComponentModel;
 

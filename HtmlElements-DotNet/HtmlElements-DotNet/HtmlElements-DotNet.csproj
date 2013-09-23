@@ -65,8 +65,6 @@
     <Compile Include="Elements\Table.cs" />
     <Compile Include="Elements\TypifiedElement.cs" />
     <Compile Include="Exceptions\HtmlElementsException.cs" />
-    <Compile Include="Factories\ByFactory.cs" />
-    <Compile Include="Factories\Exceptions\UnsupportedIdentityTypeException.cs" />
     <Compile Include="Loaders\Decorators\HtmlElementTypeAttributesHandler.cs" />
     <Compile Include="Loaders\Decorators\HtmlElementDecorator.cs" />
     <Compile Include="Loaders\Decorators\HtmlElementFactory.cs" />
