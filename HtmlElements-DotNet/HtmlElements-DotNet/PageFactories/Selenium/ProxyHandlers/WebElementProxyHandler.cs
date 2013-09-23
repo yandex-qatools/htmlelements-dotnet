@@ -8,15 +8,15 @@ namespace Yandex.HtmlElements.PageFactories.Selenium.ProxyHandlers
     {
         private IElementLocator locator;
 
-        public WebElementProxyHandler(IElementLocator locator)
+        private WebElementProxyHandler(IElementLocator locator)
             : base()
         {
             this.locator = locator;
         }
 
-        public IWebElement Wrap()
+        public static IWebElement newInstance(IElementLocator locator)
         {
-            return this.ActLike<IWebElement>();
+            return new WebElementProxyHandler(locator).ActLike<IWebElement>();
         }
 
         public override bool TryInvokeMember(InvokeMemberBinder binder, object[] args, out object result)

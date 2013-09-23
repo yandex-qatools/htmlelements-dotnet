@@ -36,22 +36,22 @@ namespace Yandex.HtmlElements.Loaders.Decorators
 
         public static IWebElement CreateNamedProxyForWebElement(IElementLocator locator, string elementName)
         {
-            return new WebElementNamedProxyHandler(locator, elementName).Wrap();
+            return WebElementNamedProxyHandler.newInstance(locator, elementName);
         }
 
         internal static object CreateNamedProxyForWebElementList(IElementLocator locator, string listName)
         {
-            return new WebElementListNamedProxyHandler(locator, listName).Wrap();
+            return WebElementListNamedProxyHandler.newInstance(locator, listName);
         }
 
         internal static object CreateNamedProxyForTypifiedElementList(Type listType, Type elementType, IElementLocator locator, string listName)
         {
-            return new TypifiedElementListNamedProxyHandler(listType, elementType, locator, listName).Wrap();
+            return TypifiedElementListNamedProxyHandler.newInstance(listType, elementType, locator, listName);
         }
 
         internal static object CreateNamedProxyForHtmlElementList(Type listType, Type elementType, IElementLocator locator, string listName)
         {
-            return new HtmlElementListNamedProxyHandler(listType, elementType, locator, listName).Wrap();
+            return HtmlElementListNamedProxyHandler.newInstance(listType, elementType, locator, listName);
         }
 
     }

@@ -3,7 +3,6 @@ using OpenQA.Selenium;
 using System.Collections.Generic;
 using System.Dynamic;
 using System.Linq;
-using Yandex.HtmlElements.PageFactories.Selenium;
 
 namespace Yandex.HtmlElements.PageFactories.Selenium.ProxyHandlers
 {
@@ -11,15 +10,15 @@ namespace Yandex.HtmlElements.PageFactories.Selenium.ProxyHandlers
     {
         private IElementLocator locator;
 
-        public WebElementListProxyHandler(IElementLocator locator)
+        private WebElementListProxyHandler(IElementLocator locator)
             : base()
         {
             this.locator = locator;
         }
 
-        public IList<IWebElement> Wrap()
+        public static IList<IWebElement> newInstance(IElementLocator locator)
         {
-            return this.ActLike<IList<IWebElement>>();
+            return new WebElementListProxyHandler(locator).ActLike<IList<IWebElement>>();
         }
 
         public override bool TryInvokeMember(InvokeMemberBinder binder, object[] args, out object result)

@@ -12,16 +12,16 @@ namespace Yandex.HtmlElements.Loaders.Decorators.ProxyHandlers
         private IElementLocator locator;
         private string name;
 
-        public WebElementListNamedProxyHandler(IElementLocator locator, string name)
+        private WebElementListNamedProxyHandler(IElementLocator locator, string name)
             : base()
         {
             this.locator = locator;
             this.name = name;
         }
 
-        public IList<IWebElement> Wrap()
+        public static IList<IWebElement> newInstance(IElementLocator locator, string name)
         {
-            return this.ActLike<IList<IWebElement>>();
+            return new WebElementListNamedProxyHandler(locator, name).ActLike<IList<IWebElement>>();
         }
 
         public override bool TryInvokeMember(InvokeMemberBinder binder, object[] args, out object result)

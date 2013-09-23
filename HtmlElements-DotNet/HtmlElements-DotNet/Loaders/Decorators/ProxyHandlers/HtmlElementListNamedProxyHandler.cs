@@ -10,23 +10,21 @@ namespace Yandex.HtmlElements.Loaders.Decorators.ProxyHandlers
 {
     public class HtmlElementListNamedProxyHandler : DynamicObject
     {
-        private Type listType;
         private Type elementType;
         private IElementLocator locator;
         private string name;
 
-        public HtmlElementListNamedProxyHandler(Type listType, Type elementType, IElementLocator locator, string name)
+        private HtmlElementListNamedProxyHandler(Type elementType, IElementLocator locator, string name)
             : base()
         {
-            this.listType = listType;
             this.elementType = elementType;
             this.locator = locator;
             this.name = name;
         }
 
-        public IList<HtmlElement> Wrap()
+        public static IList<HtmlElement> newInstance(Type listType, Type elementType, IElementLocator locator, string name)
         {
-            return this.ActLike(listType);
+            return new HtmlElementListNamedProxyHandler(elementType, locator, name).ActLike(listType);
         }
 
         public override bool TryInvokeMember(InvokeMemberBinder binder, object[] args, out object result)

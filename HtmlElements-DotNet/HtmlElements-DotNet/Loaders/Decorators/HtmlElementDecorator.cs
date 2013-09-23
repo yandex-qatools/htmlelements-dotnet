@@ -9,7 +9,6 @@ using Yandex.HtmlElements.Utils;
 
 namespace Yandex.HtmlElements.Loaders.Decorators
 {
-    // Done
     public class HtmlElementDecorator : DefaultFieldDecorator
     {
         public HtmlElementDecorator(ISearchContext searchContext)

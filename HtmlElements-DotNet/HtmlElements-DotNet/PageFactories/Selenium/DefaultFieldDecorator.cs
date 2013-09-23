@@ -69,12 +69,12 @@ namespace Yandex.HtmlElements.PageFactories.Selenium
 
         private object ProxyForLocator(IElementLocator locator)
         {
-            return new WebElementProxyHandler(locator).Wrap();
+            return WebElementProxyHandler.newInstance(locator);
         }
 
         private object ProxyForListLocator(IElementLocator locator)
         {
-            return new WebElementListProxyHandler(locator).Wrap();
+            return WebElementListProxyHandler.newInstance(locator);
         }
 
     }
