@@ -3,7 +3,7 @@
 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:schemaLocation="http://hardnorth.net/nunit-runner/XMLSchema.xsd ./nunit-runner.xsd">
   
-  <!-- <test name="Test1" class="Selenium.Test.Tests.SampleTest" /> -->
-  <!-- <test name="Test1" class="Selenium.Test.Tests.TestingTest" /> -->
+  <!-- <test name="Test1" class="HtmlElements.Test.Tests.SampleTest" /> -->
+  <!-- <test name="Test1" class="HtmlElements.Test.Tests.TestingTest" /> -->
   <test name="Test1" class="HtmlElements.Test.Tests.SampleTest" />
 </suite>
