@@ -33,11 +33,11 @@ namespace Yandex.HtmlElements.PageFactories.Selenium
 
             if (typeof(IWebElement).IsAssignableFrom(field.FieldType))
             {
-                return proxyForLocator(locator);
+                return ProxyForLocator(locator);
             }
             else if (typeof(IList).IsAssignableFrom(field.FieldType))
             {
-                return proxyForListLocator(locator);
+                return ProxyForListLocator(locator);
             }
             else
             {
@@ -67,12 +67,12 @@ namespace Yandex.HtmlElements.PageFactories.Selenium
             return true;
         }
 
-        private object proxyForLocator(IElementLocator locator)
+        private object ProxyForLocator(IElementLocator locator)
         {
             return new WebElementProxyHandler(locator).Wrap();
         }
 
-        private object proxyForListLocator(IElementLocator locator)
+        private object ProxyForListLocator(IElementLocator locator)
         {
             return new WebElementListProxyHandler(locator).Wrap();
         }
