@@ -170,10 +170,7 @@ namespace Yandex.HtmlElements.Utils
 
         private static bool IsGenericList(Type type)
         {
-            // As was found in "Type.GetInterface Method (String)" description on MSDN:
-            // For generic interfaces, the name parameter is the mangled name, ending with a grave accent (`) and the number of type parameters.
-            // So "IList`1" should be OK.
-            return type.Name == "IList`1";
+            return type.IsGenericType && typeof(IList<>) == type.GetGenericTypeDefinition();
         }
 
         private static bool HasUndefinedGenericParameters(Type type)
