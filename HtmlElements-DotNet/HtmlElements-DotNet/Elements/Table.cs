@@ -67,9 +67,12 @@ namespace Yandex.HtmlElements.Elements
             return GetColumns().ConvertAll(new Converter<List<IWebElement>, List<string>>(row => row.ConvertAll(new Converter<IWebElement, string>(element => GetText(element)))));
         }
 
-        public IWebElement GetCellAt(int i, int j)
+        public List<IWebElement> this[int index]
         {
-            return GetRows()[i][j];
+            get
+            {
+                return GetRows()[index];
+            }
         }
 
         public List<IDictionary<string, IWebElement>> GetRowsMappedToHeadings()
