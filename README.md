@@ -1,4 +1,4 @@
-htmlelement-dotnet
+htmlelements-dotnet
 ==================
 
 A DotNet Implementation of HtmlElements framework
