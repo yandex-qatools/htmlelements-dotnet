@@ -1,20 +1,32 @@
 ﻿
+using Common.Logging;
 using HtmlElements.Test.Browsers;
 using HtmlElements.Test.Services.GoogleScreens;
 using System;
 using System.Collections.Generic;
+using System.Threading;
 
 namespace HtmlElements.Test.Services
 {
     public class GoogleGuiService
     {
-        private Browser browser;
+        private readonly ILog Log = LogManager.GetLogger(typeof(GoogleGuiService));
+
+        private BrowserFactory browserFactory;
         private string baseUrl;
         private MainPage mainPage;
 
-        public GoogleGuiService(Browser browser)
+        public GoogleGuiService(BrowserFactory browserFactory)
         {
-            this.browser = browser;
+            this.browserFactory = browserFactory;
+        }
+
+        private Browser Browser
+        {
+            get
+            {
+                return browserFactory.Get();
+            }
         }
 
         public string BaseUrl
@@ -33,22 +45,11 @@ namespace HtmlElements.Test.Services
         {
             if (mainPage == null)
             {
-                mainPage = new MainPage(browser, baseUrl);
+                mainPage = new MainPage(Browser, baseUrl);
             }
             mainPage.Open();
             SearchPage ss = mainPage.search(query);
             return ss.GetSearchResluts();
-        }
-
-        internal void SearchAndNavigateToImage(string query)
-        {
-            if (mainPage == null)
-            {
-                mainPage = new MainPage(browser, baseUrl);
-            }
-            mainPage.Open();
-            SearchPage ss = mainPage.search(query);
-            ss.OpenImageSearchPage();
         }
     }
 }

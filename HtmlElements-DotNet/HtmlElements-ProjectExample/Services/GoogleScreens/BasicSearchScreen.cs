@@ -26,9 +26,9 @@ namespace HtmlElements.Test.Services.GoogleScreens
         public ImageSearchPage OpenImageSearchPage()
         {
             TopNav.Navigate("tbm=isch");
-            ImageSearchPage iss = new ImageSearchPage(browser);
-            browser.Init(iss);
-            return iss;
+            ImageSearchPage isp = new ImageSearchPage(browser);
+            browser.Init(isp);
+            return isp;
         }
     }
 }

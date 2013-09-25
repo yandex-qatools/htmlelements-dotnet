@@ -1,7 +1,5 @@
-﻿using System;
-using Spring.Testing.NUnit;
-using Common.Logging;
-using System.Threading;
+﻿using Common.Logging;
+using HtmlElements.Test.Services.GoogleScreens;
 using NUnit.Framework;
 using System.Collections.Generic;
 
@@ -10,14 +8,14 @@ namespace HtmlElements.Test.Tests
     [TestFixture]
     public class SampleTest : SeleniumTest
     {
-        private readonly ILog _log = LogManager.GetLogger(typeof(SampleTest));
+        private readonly ILog Log = LogManager.GetLogger(typeof(SampleTest));
 
         private readonly string[] keyphrases = { "test 1", "test 2", "test 3" };
 
-        //[Test(Description = "A simple test which searches in google and checks the number of results")]
+        [Test(Description = "A simple test which searches in google and checks the number of results")]
         public void TestMethod1()
         {
-            _log.Info("TestMethod1");
+            Log.Info("Sample test with Search requests");
             foreach (string key in keyphrases)
             {
                 IList<string> result = googleService.Search(key);
@@ -28,8 +26,9 @@ namespace HtmlElements.Test.Tests
         [Test(Description = "A simple test which searches in google web search and switches to image search page")]
         public void TestMethod2()
         {
-            _log.Info("TestMethod2");
-            googleService.SearchAndNavigateToImage("test");
+            Log.Info("Sample tests with screens");
+            IList<string> result = googleService.Search("Test Search");
+            ImageSearchPage isp = ((BasicSearchScreen)Browser.CurrentScreen).OpenImageSearchPage();
         }
     }
 }

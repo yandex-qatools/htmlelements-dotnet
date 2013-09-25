@@ -1,10 +1,5 @@
 ﻿using OpenQA.Selenium.Support.PageObjects;
-using HtmlElements.Test.Browsers;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Yandex.HtmlElements.Attributes;
 using Yandex.HtmlElements.Elements;
 

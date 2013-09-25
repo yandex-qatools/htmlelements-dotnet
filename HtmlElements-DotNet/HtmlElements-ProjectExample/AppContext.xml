@@ -19,10 +19,8 @@
     <property name="ProfilePath" value="${google.service.browser.profile.path}" />
   </object>
 
-  <object id="browser" type="HtmlElements.Test.Browsers.Browser" factory-object="browserFactory" factory-method="GetBrowser" singleton="false" />
-
   <object id="googleService" type="HtmlElements.Test.Services.GoogleGuiService" singleton="false">
-    <constructor-arg ref="browser" />
+    <constructor-arg ref="browserFactory" />
     <property name="BaseUrl" value="${google.service.baseurl}"/>
   </object>
 

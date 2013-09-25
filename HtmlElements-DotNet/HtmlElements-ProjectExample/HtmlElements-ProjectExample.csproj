@@ -114,7 +114,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\GoogleScreens\SearchPage.cs" />
     <Compile Include="Tests\BasicAndSeleniumTest.cs" />
-    <Compile Include="Tests\TestingTest.cs" />
     <Compile Include="Tests\Runner\IllegalSuteException.cs" />
     <Compile Include="Tests\Runner\Runner.cs" />
     <Compile Include="Tests\SampleTest.cs" />

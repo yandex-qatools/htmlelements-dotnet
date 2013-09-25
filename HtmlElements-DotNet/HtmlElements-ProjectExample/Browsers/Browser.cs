@@ -7,13 +7,15 @@ using Yandex.HtmlElements.PageFactories.Selenium;
 
 namespace HtmlElements.Test.Browsers
 {
-    public class Browser
+    public class Browser : IDisposable
     {
         private IWebDriver driver;
 
         private int timeoutSeconds;
 
         private int pollingInterval;
+
+        private IScreen currentScreen;
 
         public Browser(IWebDriver driver)
         {
@@ -31,6 +33,7 @@ namespace HtmlElements.Test.Browsers
                 IWebElement element = waiter.Until(condition);
             }
             PageFactory.InitElements(new HtmlElementDecorator(driver), pageObject);
+            currentScreen = pageObject;
         }
 
         public void GetPage(IMainScreen pageObject)
@@ -66,6 +69,33 @@ namespace HtmlElements.Test.Browsers
             {
                 pollingInterval = value;
             }
+        }
+
+        internal bool IsOnScreen(IScreen screen)
+        {
+            foreach (By identity in screen.Identities)
+            {
+                try
+                {
+                    driver.FindElement(identity);
+                }
+                catch
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        public IScreen CurrentScreen
+        {
+            get { return currentScreen; }
+        }
+
+        public void Dispose()
+        {
+            driver.Dispose();
+            currentScreen = null;
         }
     }
 }

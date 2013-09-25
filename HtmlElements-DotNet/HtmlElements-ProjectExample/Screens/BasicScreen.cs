@@ -56,5 +56,10 @@ namespace HtmlElements.Test.Screens
                 identities = value;
             }
         }
+
+        public bool IsOnCurrentPage()
+        {
+            return browser.IsOnScreen(this);
+        }
     }
 }

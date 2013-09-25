@@ -4,6 +4,7 @@ using Spring.Testing.NUnit;
 using HtmlElements.Test.Services;
 using System.Configuration;
 using HtmlElements.Test.Screens;
+using HtmlElements.Test.Browsers;
 
 namespace HtmlElements.Test.Tests
 {
@@ -40,6 +41,21 @@ namespace HtmlElements.Test.Tests
             set
             {
                 googleService = value;
+            }
+        }
+
+        private BrowserFactory browserFactory;
+
+        public BrowserFactory BrowserFactory
+        {
+            set { browserFactory = value; }
+        }
+
+        public Browser Browser
+        {
+            get
+            {
+                return browserFactory.Get();
             }
         }
     }

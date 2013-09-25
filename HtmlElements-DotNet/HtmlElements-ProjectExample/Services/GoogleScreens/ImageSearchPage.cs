@@ -18,7 +18,10 @@ namespace HtmlElements.Test.Services.GoogleScreens
 
         public override void Open()
         {
-            throw new NotImplementedException();
+            if (!IsOnCurrentPage())
+            {
+                OpenImageSearchPage();
+            }
         }
     }
 }
