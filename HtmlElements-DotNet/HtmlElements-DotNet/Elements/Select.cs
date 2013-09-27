@@ -66,7 +66,7 @@ namespace Yandex.HtmlElements.Elements
             GetSelect().SelectByValue(value);
         }
 
-        public void deselectAll()
+        public void DeselectAll()
         {
             GetSelect().DeselectAll();
         }

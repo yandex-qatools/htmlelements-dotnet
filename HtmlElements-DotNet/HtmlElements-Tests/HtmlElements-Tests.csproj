@@ -67,6 +67,7 @@
     <Compile Include="Tests\TestElements\MockedForm.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tests\FormFillingTest.cs" />
+    <Compile Include="Tests\UsingSelectTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
