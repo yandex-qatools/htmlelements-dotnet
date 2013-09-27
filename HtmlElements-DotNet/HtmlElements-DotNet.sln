@@ -12,6 +12,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HtmlElements-DotNet", "Html
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HtmlElements-ProjectExample", "HtmlElements-ProjectExample\HtmlElements-ProjectExample.csproj", "{21B6BF17-92E5-4844-B63C-B3A6183047A6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HtmlElements-Tests", "HtmlElements-Tests\HtmlElements-Tests.csproj", "{ED0A58DF-9ACC-4395-89F5-4AFEBA7DA73B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -26,6 +28,10 @@ Global
 		{21B6BF17-92E5-4844-B63C-B3A6183047A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{21B6BF17-92E5-4844-B63C-B3A6183047A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{21B6BF17-92E5-4844-B63C-B3A6183047A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ED0A58DF-9ACC-4395-89F5-4AFEBA7DA73B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED0A58DF-9ACC-4395-89F5-4AFEBA7DA73B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED0A58DF-9ACC-4395-89F5-4AFEBA7DA73B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED0A58DF-9ACC-4395-89F5-4AFEBA7DA73B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
