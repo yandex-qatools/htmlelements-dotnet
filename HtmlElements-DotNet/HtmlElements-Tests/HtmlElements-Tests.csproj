@@ -67,6 +67,11 @@
     <Compile Include="Tests\TestElements\MockedForm.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tests\FormFillingTest.cs" />
+    <Compile Include="Tests\TestElements\SearchArrow.cs" />
+    <Compile Include="Tests\TestElements\SearchArrowData.cs" />
+    <Compile Include="Tests\TestElements\SearchArrowWithRequestSample.cs" />
+    <Compile Include="Tests\HtmlElementInitializationTest.cs" />
+    <Compile Include="Tests\TestPages\SearchPage.cs" />
     <Compile Include="Tests\UsingSelectTest.cs" />
   </ItemGroup>
   <ItemGroup>

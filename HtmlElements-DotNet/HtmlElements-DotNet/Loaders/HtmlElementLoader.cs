@@ -13,20 +13,19 @@ namespace Yandex.HtmlElements.Loaders
     {
         public static T Create<T>(IWebDriver driver)
         {
-            T result;
+            object result;
             Type type = typeof(T);
             if (HtmlElementUtils.IsHtmlElement(type))
             {
-                result = (T)Convert.ChangeType(HtmlElementFactory.CreateHtmlElementInstance(type), type);
-                PopulateHtmlElement((HtmlElement)Convert.ChangeType(result, typeof(HtmlElement)),
-                    new HtmlElementLocatorFactory(driver));
+                result = HtmlElementFactory.CreateHtmlElementInstance(type);
+                PopulateHtmlElement((HtmlElement)result, new HtmlElementLocatorFactory(driver));
             }
             else
             {
                 result = (T)HtmlElementFactory.CreatePageObjectInstance(type, driver);
                 PopulatePageObject(result, new HtmlElementLocatorFactory(driver));
             }
-            return result;
+            return (T)result;
         }
 
         public static void Populate(object instance, IWebDriver driver)
@@ -87,7 +86,7 @@ namespace Yandex.HtmlElements.Loaders
             PopulatePageObject(page, new HtmlElementLocatorFactory(driver));
         }
 
-        private static void PopulatePageObject(object page,
+        public static void PopulatePageObject(object page,
             CustomElementLocatorFactory locatorFactory)
         {
             PageFactory.InitElements(new HtmlElementDecorator(locatorFactory), page);

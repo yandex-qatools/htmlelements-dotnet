@@ -63,6 +63,8 @@
     <Compile Include="Elements\Radio.cs" />
     <Compile Include="Elements\Select.cs" />
     <Compile Include="Elements\Table.cs" />
+	<Compile Include="Elements\TextBlock.cs" />
+	<Compile Include="Elements\TextInput.cs" />
     <Compile Include="Elements\TypifiedElement.cs" />
     <Compile Include="Exceptions\HtmlElementsException.cs" />
     <Compile Include="Loaders\Decorators\HtmlElementTypeAttributesHandler.cs" />
