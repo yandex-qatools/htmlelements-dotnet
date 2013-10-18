@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace HtmlElements.Test.Services.GoogleScreens
 {
-    [Identity("XPath://a[contains(@href,'imghp')]", "Id:fll")]
+    [Identity("XPath://div[@id='ires']/ol[@id='rso']/li/div[@id='rg']/div[@id='rg_s']", "Id:fsl")]
     public class ImageSearchPage : BasicSearchScreen
     {
         public ImageSearchPage(Browser browser)
