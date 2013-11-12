@@ -63,7 +63,7 @@ public class SampleTest {
     }
 
     [Test]
-    public void sampleTest() {
+    public void SampleTest() {
         searchPage.Search("yandex");
         // Some assertion here
     }
