@@ -30,7 +30,7 @@ namespace HtmlElements.Tests
         [TestMethod]
         public void HtmlElementNameMustBePopulated()
         {
-            Assert.AreEqual(AnnotatedHtmlElementPage.ElementName, page.Element.Name, "HtmlElement name should meet expectation");
+            Assert.AreEqual(AnnotatedHtmlElementPage.ElementName, page.Element.Name, "HtmlElement Name property should return declared value");
         }
 
         [TestMethod]
