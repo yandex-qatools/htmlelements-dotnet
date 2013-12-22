@@ -42,5 +42,15 @@ namespace HtmlElements.Tests
                 Assert.IsNotNull(element.SearchButton, "Submit button of search arrow should not be null");
             }
         }
+
+        [TestMethod]
+        public void HtmlElementNameAndToStringMethodShouldBeAsDeclared()
+        {
+            foreach (SearchArrow element in Data())
+            {
+                Assert.AreEqual(SearchArrowData.SearchArrowName, element.Name, "HtmlElement Name property should return declared value");
+                Assert.AreEqual(SearchArrowData.SearchArrowName, element.ToString(), "HtmlElement .ToString() method should return declared value");
+            }
+        }
     }
 }
