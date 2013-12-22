@@ -16,7 +16,6 @@
     <constructor-arg type="HtmlElements.Test.Browsers.BrowserType" value="${google.service.browser.type}" />
     <property name="LoadTimeout" value="${browser.loadTimeout}" />
     <property name="PollingInterval" value="${browser.pollingInterval}" />
-    <property name="ProfilePath" value="${google.service.browser.profile.path}" />
   </object>
 
   <object id="googleService" type="HtmlElements.Test.Services.GoogleGuiService" singleton="false">

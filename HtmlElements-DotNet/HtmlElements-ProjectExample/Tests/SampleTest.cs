@@ -19,7 +19,7 @@ namespace HtmlElements.Test.Tests
             foreach (string key in keyphrases)
             {
                 IList<string> result = googleService.Search(key);
-                Assert.AreEqual(10, result.Count, "Check number of resluts on page");
+                Assert.AreEqual(10, result.Count, "Check number of results on page");
             }
         }
 
@@ -29,6 +29,7 @@ namespace HtmlElements.Test.Tests
             Log.Info("Sample tests with screens");
             IList<string> result = googleService.Search("Test Search");
             ImageSearchPage isp = ((BasicSearchScreen)Browser.CurrentScreen).OpenImageSearchPage();
+            Assert.NotNull(isp, "Check Image Page isn't null");
         }
     }
 }
