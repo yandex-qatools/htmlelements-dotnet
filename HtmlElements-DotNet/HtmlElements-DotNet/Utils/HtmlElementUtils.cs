@@ -192,9 +192,19 @@ namespace Yandex.HtmlElements.Utils
             return type.GenericTypeArguments[0];
         }
 
-        public static string GetElementName(FieldInfo Field)
+        public static string GetElementName(FieldInfo field)
         {
-            return GetElementName(Field.FieldType);
+            NameAttribute name = field.GetCustomAttribute<NameAttribute>(false);
+            if (name != null)
+            {
+                return name.Name;
+            }
+            name = field.FieldType.GetCustomAttribute<NameAttribute>(false);
+            if (name != null)
+            {
+                return name.Name;
+            }
+            return SplitCamelCase(field.Name);
         }
 
         public static string GetElementName(Type type)
@@ -204,10 +214,7 @@ namespace Yandex.HtmlElements.Utils
             {
                 return name.Name;
             }
-            else
-            {
-                return SplitCamelCase(type.Name);
-            }
+            return SplitCamelCase(type.Name);
         }
 
         private static String SplitCamelCase(string camel)

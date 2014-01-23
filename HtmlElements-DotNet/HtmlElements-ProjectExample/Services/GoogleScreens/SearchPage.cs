@@ -11,7 +11,7 @@ namespace HtmlElements.Test.Services.GoogleScreens
     [Identity("Xpath://table[@id='nav']", "Id:fsl")]
     public class SearchPage : BasicSearchScreen
     {
-        [FindsBy(How = How.XPath, Using = "//ol[@id='rso']/li")]
+        [FindsBy(How = How.XPath, Using = "//ol[@id='rso']/li[not(@id)]")]
         public IList<IWebElement> allResults;
 
         public SearchPage(Browser browser)

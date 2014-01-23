@@ -45,7 +45,14 @@ namespace HtmlElements.Test.Browsers
                 case BrowserType.Chrome:
                     return new ChromeDriver();
                 case BrowserType.Firefox:
-                    return new FirefoxDriver(new FirefoxProfile(profilePath));
+                    if (profilePath == null)
+                    {
+                        return new FirefoxDriver(new FirefoxProfile());
+                    }
+                    else
+                    {
+                        return new FirefoxDriver(new FirefoxProfile(profilePath));
+                    }
                 case BrowserType.IE:
                     return new InternetExplorerDriver();
                 case BrowserType.PhantomJs:
