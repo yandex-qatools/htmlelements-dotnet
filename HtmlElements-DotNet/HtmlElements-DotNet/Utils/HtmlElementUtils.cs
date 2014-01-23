@@ -199,7 +199,12 @@ namespace Yandex.HtmlElements.Utils
             {
                 return name.Name;
             }
-            return GetElementName(field.FieldType);
+            name = field.FieldType.GetCustomAttribute<NameAttribute>(false);
+            if (name != null)
+            {
+                return name.Name;
+            }
+            return SplitCamelCase(field.Name);
         }
 
         public static string GetElementName(Type type)
